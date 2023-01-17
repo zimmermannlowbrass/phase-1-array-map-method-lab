@@ -12,5 +12,20 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let newTutorialList = []
+  for (const tutor of tutorials) {
+    let x = ''
+    let newTutor = tutor.split(' ')
+    for (const tut of newTutor) {
+      x += (capitalizeFirstLetter(tut))
+      x += ' '
+    }
+    x = x.slice(0, (x.length - 1))
+    newTutorialList.push(x)
+  }
+  return newTutorialList
+}
+
+function capitalizeFirstLetter(str) {
+  return (str.slice(0,1).toUpperCase() + str.slice(1, str.length))
 }
